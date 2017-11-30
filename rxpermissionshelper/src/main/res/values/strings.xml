@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">rxpermissionshelper</string>
+    <string name="permission_refuse">申请权限被拒绝，请到软件管理开启权限!</string>
+    <string name="permission_err">申请权限错误!</string>
+</resources>
