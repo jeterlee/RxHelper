@@ -44,8 +44,8 @@ allprojects {
 
 Step 2. Add the dependency
 ```
-implementation 'com.github.jeterlee.RxHelper:rxhelper:v1.0.2'
-implementation 'com.github.jeterlee.RxHelper:rxpermissionshelper:v1.0.2'
+implementation 'com.github.jeterlee.RxHelper:rxhelper:v1.0.0'
+implementation 'com.github.jeterlee.RxHelper:rxpermissionshelper:v1.0.0'
 ```
 
 

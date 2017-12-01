@@ -2,16 +2,18 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'com.github.jeterlee'
+version = 'v1.0.0'
+project.archivesBaseName = 'rxpermissionshelper'
 
 android {
     compileSdkVersion 27
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 102
-        versionName "1.0.2"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        versionCode 100
+        versionName "1.0.0"
         consumerProguardFiles 'consumer-proguard-rules.pro'
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -24,6 +26,30 @@ android {
 
     lintOptions {
         abortOnError false
+    }
+}
+
+android {
+    // 以下为配置library注释在打包jar后保留
+    // 打包源码jar
+    task sourcesJar(type: Jar) {
+        from android.sourceSets.main.java.srcDirs
+        classifier = 'sources'
+    }
+    task javadoc(type: Javadoc) {
+        failOnError false
+        source = android.sourceSets.main.java.sourceFiles
+        classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+        classpath += configurations.compile
+    }
+    // 打包文档jar
+    task javadocJar(type: Jar, dependsOn: javadoc) {
+        classifier = 'javadoc'
+        from javadoc.destinationDir
+    }
+    artifacts {
+        archives sourcesJar
+        archives javadocJar
     }
 }
 
