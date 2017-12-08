@@ -55,7 +55,7 @@ implementation 'com.github.jeterlee.RxHelper:rxpermissionshelper:v1.0.0'
 
 
 ## 五、参考项目
-待定
+- [easypermissions](https://github.com/googlesamples/easypermissions)
 
 
 # License
